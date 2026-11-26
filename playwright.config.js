@@ -9,9 +9,10 @@ const config = ({
   use:{
 
   browserName: 'chromium',
-  headless: false,
+  headless: !!process.env.CI,
   screenshot: 'only-on-failure',
-    trace: 'retain-on-failure',
+    // traces record typed values, including passwords, so keep them off in CI
+    trace: process.env.CI ? 'off' : 'retain-on-failure',
   },
 
 });

@@ -45,7 +45,6 @@ console.log(await checkboxUser.isChecked());
 
 // select the dropdown and click on the checkbox
 await dropdown.selectOption('consult');
-  await page.pause();
 
   await signInBtn.click();
   await expect(page).toHaveTitle('ProtoCommerce');
